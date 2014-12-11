@@ -40,8 +40,12 @@ CarrierWaveDirect works with [fog](https://github.com/fog/fog) so make sure you 
         :aws_access_key_id      => 'xxx',       # required
         :aws_secret_access_key  => 'yyy',       # required
         :region                 => 'eu-west-1'  # optional, defaults to 'us-east-1'
+        :endpoint               => "https://s3.amazonaws.com/#{name_of_your_aws_bucket}" #required
+
       }
-      config.fog_directory  = 'name_of_your_aws_bucket' # required
+      config.fog_directory  = name_of_your_aws_bucket # required
+      config.asset_host = '//www.your.cdn.address.here' #optional
+
       # see https://github.com/jnicklas/carrierwave#using-amazon-s3
       # for more optional configuration
     end
